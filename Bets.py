@@ -7,6 +7,8 @@
 # Could add a converter so the user doesn't have to convert the odds themselves. Should really do this.
 # 
 # Am going to make huge changes to INPUT RECEPTION, PROCESSING AND VALIDATION to complete the above. Upload to GitHub before doing this.
+# 
+# TEST REPOSITORY COMMIT
 
 # ------------------------------
 # FUNCTIONS
