@@ -1,15 +1,3 @@
-# NOTES
-#
-# Could improve MatrixPrint but at that point I think using TextTable would just be better
-#
-# Could add option to delete rows of the all_results matrix to remove results obtained by incorrectly input odds.
-#
-# Could add support for fractional odds to be entered as integers where appropriate - I anticipate this needing quite a lot of code, so it's probably not worth it, at least for now.
-# 
-# The input section has 3 main branches of the if statement, each handling a different format of odds. As each of these branches are similar, only the decimal branch is fully commented.
-# 
-# Explanation of the mathematics of the analysis itself will soon be available in the README. 
-
 # ------------------------------
 # FUNCTIONS
 # ------------------------------
