@@ -260,11 +260,11 @@ while True:
     
     team2_bet_criterion_formatted = str(team2_bet_criterion_formatted) + str("%")
 
-    name_of_site = input("\n" + "Enter a name for this analysis. Entering E will exit the program. ")
-    if name_of_site == "E":
+    name_of_analysis = input("\n" + "Enter a name for this analysis. Entering E will exit the program. ")
+    if name_of_analysis == "E":
         ExitProgram()
 
-    all_results_matrix.append([name_of_site, "p > " + team1_bet_criterion_formatted, "p < " + team2_bet_criterion_formatted])
+    all_results_matrix.append([name_of_analysis, "p > " + team1_bet_criterion_formatted, "p < " + team2_bet_criterion_formatted])
 
 # ------------------------------
 # ANALYSIS RESULT OUTPUT
