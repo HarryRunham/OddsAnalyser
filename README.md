@@ -5,11 +5,52 @@ Please note that only the decimal branch of the input section if statement is fu
 
 # Mathematics
 
-Let:
-o1 be the odds of team 1 winning y  $y$   $ y $
+Let:    
+$o_1$ be the odds of team 1 winning, in decimal form. $o_1 \ge 1$         
+$o_2$ be the odds of team 2 winning, in decimal form. $o_2 \ge 1$      
+$b_1$ be the bet on team 1. $b_1 \ge 0$    
+$b_2$ be the bet on team 2. $b_2 \ge 0$   
+$p$ be the probability of team 1 winning. $0 \le p \le 1$    
+$E$ be the expected income.  
+&nbsp;
 
 $$
+\begin{align}
+E &= p((o_1 - 1)b_1 - b_2) + (1-p)(-b_1 + (o_2 - 1)b_2) \\
+\\
+&= b_1p(o_1 - 1) -b_2p -b_1 + b_2(o_2-1) + b_1p + b_2(-p(o_2 - 1)) \\
+\\
+&= b_1(p(o_1 - 1) - 1 + p) + b_2(-p + (o_2 - 1) + p(1 - o_2)) \\
+\\
+&= b_1(po_1 - 1) + b_2(-po_2 + o_2 - 1)
+\end{align}
+$$
 
+$\frac{dE}{db_1} = po_1 - 1$
+
+$\therefore \frac{dE}{db_1} > 0$ when $po_1 - 1 > 0$
+
+$\therefore \frac{dE}{db_1} > 0$ when $p > \frac{1}{o_1}$
+
+$\frac{dE}{db_2} = o_2(1 - p) - 1$
+
+$\therefore \frac{dE}{db_2} > 0$ when $o_2(1 - p) - 1 > 0$
+
+$$
+\begin{align}
+o_2(1 - p) - 1 &> 0 \\
+-o_2p &> 1 - o_2 \\
+p &< \frac{o_2 - 1}{o_2}
+\end{align}
+$$
+
+$\therefore \frac{dE}{db_2} > 0$ when $p < \frac{o_2 - 1}{o_2}$
+
+Therefore:
+* When $p > \frac{1}{o_1}$ you should increase $b_1$ (i.e. bet on team 1)
+* When $p < \frac{o_2 - 1}{o_2}$ you should increase $b_2$ (i.e. bet on team 2)
+
+The script does the above calculation for you. In the script there is code to round the decimal forms of the above fractions - this is for readability of output, and the adjustments following it are to ensure the analysis results remain correct - for example, if a figure is rounded down, then telling the user to bet if they believe the "real" number to be above that is incorrect advice if their prediction is between the original value and the rounded value.
 
 # Potential Improvements
 MatrixPrint doesn't print matrices in a very pretty way and could be improved, either by implementing slightly complex code or by using a module such as texttable.
@@ -24,3 +65,5 @@ Support for analysing odds for events other than one side winning - some sites a
 Scraping of odds from betting sites with automatic analysis.
 
 GUI.
+
+Based off of a user-input budget for a number of match bets and a user-input array of predicted team 1 chances of winning for those matches, advise the user on how much they should bet on each match.
