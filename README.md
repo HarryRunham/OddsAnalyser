@@ -6,7 +6,10 @@ Please note that only the decimal branch of the input section if statement is fu
 # Mathematics
 
 Let:
-o~1~ be the odds of team 1 winning   $1 \leq \leqq o~1~$
+o1 be the odds of team 1 winning y  $y$   $ y $
+
+$$
+
 
 # Potential Improvements
 MatrixPrint doesn't print matrices in a very pretty way and could be improved, either by implementing slightly complex code or by using a module such as texttable.
